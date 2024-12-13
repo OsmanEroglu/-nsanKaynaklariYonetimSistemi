@@ -1,0 +1,32 @@
+.button-row {
+    display: flex; /* Butonları yatay hizalar */
+    gap: 10px; /* Butonlar arasında boşluk bırakır */
+  }
+  
+  ion-button {
+    flex: 1; /* Butonların eşit genişlikte olmasını sağlar */
+    font-size: 1.2rem; /* Yazı boyutunu artırır */
+  }
+  ion-label {
+    font-size: 1.4rem; /* Etiket yazı boyutunu artırır */
+  }
+  
+  ion-input,
+  ion-select,
+  ion-datetime {
+    font-size: 1.2rem; /* Giriş alanlarının yazı boyutunu artırır */
+  }
+  
+  ion-button {
+    flex: 1; /* Butonları eşit boyutta yapar */
+    font-size: 1.2rem; /* Buton yazı boyutunu artırır */
+  }
+
+  ion-datetime {
+    margin-top: 15px; /* Takvim ile giriş alanı arasına boşluk ekler */
+  }
+  
+  ion-item {
+    margin-bottom: 20px; /* Her form elemanının altında daha fazla boşluk bırakır */
+  }
+  

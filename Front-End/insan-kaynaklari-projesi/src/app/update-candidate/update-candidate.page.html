@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Aday Düzenle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="updateCandidate()">
+    <ion-item>
+      <ion-label position="floating">Ad</ion-label>
+      <ion-input [(ngModel)]="candidate.firstName" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Soyad</ion-label>
+      <ion-input [(ngModel)]="candidate.lastName" name="surname" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Pozisyon</ion-label>
+      <ion-input [(ngModel)]="candidate.position" name="position" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Askerlik Durumu</ion-label>
+      <ion-select [(ngModel)]="candidate.militaryStatus" name="militaryStatus">
+        <ion-select-option value="Muaf">Muaf</ion-select-option>
+        <ion-select-option value="Tamamladı">Tamamladı</ion-select-option>
+        <ion-select-option value="Tecilli">Tecilli</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">İhbar Bitim Süresi (Gün)</ion-label>
+      <ion-input [(ngModel)]="candidate.noticePeriod" name="noticePeriod"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefon Numarası</ion-label>
+      <ion-input [(ngModel)]="candidate.phone" name="phone" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="candidate.email" name="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">CV</ion-label>
+      <ion-input [(ngModel)]="candidate.cv" name="cv" required></ion-input>
+    </ion-item>
+
+    <div class="button-row">
+      <ion-button expand="full" type="submit" color="primary">Güncelle</ion-button>
+      <ion-button expand="full" color="danger" (click)="cancel()">Vazgeç</ion-button>
+    </div>
+  </form>
+</ion-content>

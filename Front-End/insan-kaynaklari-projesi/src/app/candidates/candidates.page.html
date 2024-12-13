@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Aday Yönetimi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="filter">
+
+    <ion-col size="4">
+      <ion-item>
+        <ion-label>Pozisyon</ion-label>
+        <ion-select [(ngModel)]="filter.position" (ionChange)="applyFilters()">
+          <ion-select-option value="">Tümü</ion-select-option>
+          <ion-select-option *ngFor="let position of positions" [value]="position">
+            {{ position }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-item>
+        <ion-label>Askerlik Durumu</ion-label>
+        <ion-select [(ngModel)]="filter.militaryStatus" (ionChange)="applyFilters()">
+          <ion-select-option value="">Tümü</ion-select-option>
+          <ion-select-option *ngFor="let militaryStatus of militaryStatus" [value]="militaryStatus">
+            {{ militaryStatus }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-item>
+        <ion-label>İhbar Süresi</ion-label>
+        <ion-select [(ngModel)]="filter.noticePeriod" (ionChange)="applyFilters()">
+          <ion-select-option value="">Tümü</ion-select-option>
+          <ion-select-option *ngFor="let noticePeriod of noticePeriod" [value]="noticePeriod">
+            {{ noticePeriod }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </div>
+
+  <!-- Aday Listesi -->
+  <ion-list>
+    <ion-item *ngFor="let candidate of filteredCandidates">
+      <ion-label>
+        <h2>{{ candidate.firstName }} {{ candidate.lastName }}</h2>
+        <p>Pozisyon: {{ candidate.position }}</p>
+        <p>İhbar Süresi (Gün): {{ candidate.noticePeriod }}</p>
+        <p>Askerlik Durumu: {{ candidate.militaryStatus }}</p>
+        <p>Telefon: {{ candidate.phone }}</p>
+        <p>Email: {{ candidate.email }}</p>
+        <p>CV: {{ candidate.cv }}</p>
+      </ion-label>
+      <ion-button slot="end" color="warning" (click)="updateCandidate(candidate)">Güncelle</ion-button>
+      <ion-button slot="end" color="danger" (click)="deleteCandidate(candidate.id)">Sil</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Yeni Aday Ekle Butonu -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addCandidate()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

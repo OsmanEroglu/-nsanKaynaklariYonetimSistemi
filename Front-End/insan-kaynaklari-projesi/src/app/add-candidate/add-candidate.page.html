@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Yeni Aday Ekle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="candidateForm" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="stacked">Ad</ion-label>
+      <ion-input formControlName="firstName" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Soyad</ion-label>
+      <ion-input formControlName="lastName" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Pozisyon</ion-label>
+      <ion-input formControlName="position" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Askerlik Durumu</ion-label>
+      <ion-select formControlName="militaryStatus">
+        <ion-select-option value="Muaf">Muaf</ion-select-option>
+        <ion-select-option value="Tamamladı">Tamamladı</ion-select-option>
+        <ion-select-option value="Tecilli">Tecilli</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">İhbar Bitim Süresi (Gün)</ion-label>
+      <ion-input formControlName="noticePeriod" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Telefon</ion-label>
+      <ion-input formControlName="phone" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">CV</ion-label>
+      <ion-input formControlName="cv" type="text"></ion-input>
+    </ion-item>
+
+
+    <div class="button-row">
+      <ion-button expand="block" type="submit" color="primary">KAYDET</ion-button>
+      <ion-button expand="block" (click)="cancel()" color="medium">VAZGEÇ</ion-button>
+    </div>
+  </form>
+</ion-content>
