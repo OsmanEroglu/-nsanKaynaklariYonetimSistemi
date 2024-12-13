@@ -12,3 +12,9 @@ BACK_END
 
 VERİTABANI
 *  H2 veritabanı kullanıldığı için herhangi bir işlem yapmanıza gerek yok.
+
+API Uç noktaları
+*  /api/candidates (GET) → Tüm adayları listeleme
+*  /api/candidates (POST) → Yeni aday ekleme
+*  /api/candidates/{id} (PUT) → Mevcut bir adayı güncelleme
+*  /api/candidates/{id} (DELETE) → Belirli bir adayı silme
